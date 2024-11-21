@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 01:35:03 by opoure            #+#    #+#             */
+/*   Updated: 2024/11/21 01:36:20 by opoure           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
@@ -5,11 +17,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_src;
 	size_t	len_dst;
 	size_t	i;
-	
-//	if (!src)
-//		len_src = 0;
-//	else 
-		len_src = ft_strlen(src);
+
+	len_src = ft_strlen(src);
 	i = 0;
 	if (!dst)
 		len_dst = 0;
@@ -22,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[len_dst + i] =  '\0';
+	dst[len_dst + i] = '\0';
 	return (len_src + len_dst);
 }
 /*
@@ -35,12 +44,4 @@ int	main(void)
 	printf("%d\n", strncat(((void *)0), b, 0));
 	return(0);
 }
-
- * src and dst must be nul terminated
- * dst + src 
- * dstsize - strlen(dst) - 1
- * => strlen(dst) est compris dans dstsize
- *if dstsize == 0 ou strlen(dst) >= dstsize)
- *	PAS DE NUL
- *lensrc + lendst
- */
+*/
