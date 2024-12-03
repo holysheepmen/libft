@@ -6,15 +6,15 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:33:25 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 13:39:14 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/28 13:06:44 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**words(const char *str, char **result, char c);
+static char		**words(const char *str, char **result, char c);
 static size_t	count_words(const char *str, char c);
-static char	*copy_word(const char *str, int start, int end);
+static char		*copy_word(const char *str, int start, int end);
 
 static size_t	count_words(const char *str, char c)
 {
@@ -50,7 +50,6 @@ static char	**words(const char *str, char **result, char c)
 	size_t	count;
 	size_t	i;
 	size_t	start;
-	size_t	end;
 
 	i = 0;
 	count = 0;
@@ -61,13 +60,13 @@ static char	**words(const char *str, char **result, char c)
 			start = i;
 			while (!(str[i + 1] == c || str[i + 1] == '\0'))
 				i++;
-			end = i + 1;
-			result[count] = copy_word(str, start, end);
+			result[count] = copy_word(str, start, i + 1);
 			if (!result[count])
 			{
 				free_result(result, count);
 				return (NULL);
 			}
+			count++;
 		}
 		i++;
 	}
@@ -77,13 +76,13 @@ static char	**words(const char *str, char **result, char c)
 static char	*copy_word(const char *str, int start, int end)
 {
 	char	*word;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	word = malloc((end - start + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
-	while (start <= end)
+	while (start < end)
 	{
 		word[i] = str[start];
 		i++;
@@ -96,7 +95,7 @@ static char	*copy_word(const char *str, int start, int end)
 char	**ft_split(const char *s, char c)
 {
 	char	**result;
-	int	size;
+	int		size;
 
 	if (!s)
 		return (NULL);
@@ -104,8 +103,8 @@ char	**ft_split(const char *s, char c)
 	result = malloc(sizeof(char *) * (size + 1));
 	if (!result)
 		return (NULL);
-	result = words(s, result, c);
 	result[size] = NULL;
+	result = words(s, result, c);
 	return (result);
 }
 /*
@@ -114,8 +113,8 @@ char	**ft_split(const char *s, char c)
 int	main(void)
 {
 	char **result;
-	char *string = "\0aa\0bbb";
-	char **expected = ((char*[3]){"aa", "bbb", NULL});
+	char *string = "aa bbb  c     ";
+	char **expected = ((char*[4]){"aa", "bbb","c" ,NULL});
 	int y = 0;
 
 	result = ft_split(string, '\0');

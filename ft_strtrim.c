@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:54:48 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 11:56:01 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:25:04 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str;
 	size_t	start;
-	int	i;
-	int	end;
+	int		i;
+	int		end;
 
 	if (!s1 || s1[0] == '\0')
 		return (ft_strdup(""));

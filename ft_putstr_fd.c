@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:21:16 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 01:23:53 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/28 12:36:01 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
 /*
 #include <fcntl.h>
@@ -24,9 +29,9 @@ int     main(int ac, char *av[])
 {
         int     fd;
 
-        fd = open(av[1], O_WRONLY);
-        ft_putstr_fd("blabla", fd);
+        fd = open(av[1], O_RDWR);
+        ft_putstr_fd("\nend!", fd);
         close(fd);
-        return (0);
+		return (0);
 }
 */

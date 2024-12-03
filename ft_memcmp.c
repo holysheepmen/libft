@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:19:53 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/20 23:35:23 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:22:55 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
-	size_t		i;
+	size_t			i;
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
@@ -38,7 +38,8 @@ int	main(void)
 		printf("basic fail\n");
         if (ft_memcmp("AAB", "AAA", 2) != memcmp("AAB", "AAA", 2))
                 printf("limites fail\n");
-        if (ft_memcmp("\x01\x02\x03", "\x01\x02\x04", 3) != memcmp("\x01\x02\x03", "\x01\x02\x04", 3))
+        if (ft_memcmp("\x01\x02\x03", "\x01\x02\x04", 3) 
+			!= memcmp("\x01\x02\x03", "\x01\x02\x04", 3))
                 printf("speciaux fail\n");
         if (ft_memcmp("AAB", "AAA", 0) != memcmp("AAB", "AAA", 0))
                 printf("empty fail");

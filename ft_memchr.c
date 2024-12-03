@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 19:29:35 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 00:11:30 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/23 15:28:14 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	to_find;
 	unsigned char	*str;
-	size_t		i;
+	size_t			i;
 
 	i = 0;
 	str = (unsigned char *)s;

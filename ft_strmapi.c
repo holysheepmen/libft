@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:40:33 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 01:41:30 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:27:37 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char		*str;
+	char			*str;
 	unsigned int	i;
 
 	if (!s || !f)

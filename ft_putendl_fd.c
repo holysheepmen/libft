@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:02:16 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 01:06:15 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/28 12:55:22 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
 /*

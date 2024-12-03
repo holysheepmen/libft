@@ -6,7 +6,7 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:24:47 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 01:26:41 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:27:55 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *str, int c)
 {
 	unsigned int	i;
-	char		to_find;
+	char			to_find;
 
 	i = 0;
 	to_find = (char) c;

@@ -6,13 +6,13 @@
 /*   By: opoure <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 01:53:31 by opoure            #+#    #+#             */
-/*   Updated: 2024/11/21 01:53:46 by opoure           ###   ########.fr       */
+/*   Updated: 2024/11/28 11:58:24 by opoure           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		return (c + 32);
